@@ -39,7 +39,7 @@ int main() {
     int counter = 0;
     for (const auto& entry : fs::directory_iterator(path)) {
         std::cout << "Processing:" << std::endl << entry.path() << std::endl;
-        Execute(entry.path(), path + "/image_" + std::to_string(counter) + ".png");
+        Execute(entry.path().string(), path + "/image_" + std::to_string(counter) + ".png");
         ++counter;
     }
 
